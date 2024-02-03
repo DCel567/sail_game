@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1ldltqjx76xg"]
+
+[ext_resource type="Texture2D" uid="uid://buq6nwcso3ntp" path="res://Graphics/sky.png" id="1_elwte"]
+[ext_resource type="PackedScene" uid="uid://baj0jegkt1cyu" path="res://Decorations/waves.tscn" id="2_m6bwc"]
+
+[node name="level1" type="Node2D"]
+
+[node name="sky" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_elwte")
+
+[node name="waves" parent="." instance=ExtResource("2_m6bwc")]
+position = Vector2(939, 940)
+freq = 5
+ampl = 50

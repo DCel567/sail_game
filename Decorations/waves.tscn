@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://baj0jegkt1cyu"]
+
+[ext_resource type="Script" path="res://Decorations/waves.gd" id="1_ln1rh"]
+[ext_resource type="Texture2D" uid="uid://b87oq0pcdgeui" path="res://Graphics/waves.png" id="1_twuan"]
+
+[sub_resource type="Gradient" id="Gradient_4p0px"]
+offsets = PackedFloat32Array(0.664699, 0.783943)
+colors = PackedColorArray(0.780392, 0.6, 0.290196, 1, 0.921569, 0.709804, 0.345098, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_64q8h"]
+gradient = SubResource("Gradient_4p0px")
+
+[node name="waves" type="Node2D"]
+position = Vector2(950, 896)
+script = ExtResource("1_ln1rh")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="stick1" type="Sprite2D" parent="Node2D"]
+position = Vector2(-562, 187)
+scale = Vector2(0.117187, 370.75)
+texture = SubResource("GradientTexture1D_64q8h")
+
+[node name="stick2" type="Sprite2D" parent="Node2D"]
+position = Vector2(406, 186)
+scale = Vector2(0.117187, 370.75)
+texture = SubResource("GradientTexture1D_64q8h")
+
+[node name="wave" type="Sprite2D" parent="Node2D"]
+position = Vector2(-15, -12)
+texture = ExtResource("1_twuan")
