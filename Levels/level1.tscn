@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1ldltqjx76xg"]
+[gd_scene load_steps=4 format=3 uid="uid://c1ldltqjx76xg"]
 
 [ext_resource type="Texture2D" uid="uid://buq6nwcso3ntp" path="res://Graphics/sky.png" id="1_elwte"]
 [ext_resource type="PackedScene" uid="uid://baj0jegkt1cyu" path="res://Decorations/waves.tscn" id="2_m6bwc"]
+[ext_resource type="PackedScene" uid="uid://c616q6utun3b7" path="res://Decorations/sun.tscn" id="3_2ykkd"]
 
 [node name="level1" type="Node2D"]
 
@@ -10,6 +11,9 @@ position = Vector2(960, 540)
 texture = ExtResource("1_elwte")
 
 [node name="waves" parent="." instance=ExtResource("2_m6bwc")]
-position = Vector2(939, 940)
+position = Vector2(950, 917)
 freq = 5
-ampl = 50
+ampl = 60
+
+[node name="sun" parent="." instance=ExtResource("3_2ykkd")]
+position = Vector2(1727, 205)
