@@ -1,10 +1,7 @@
 extends Node2D
 
-@export var freq = 3
-@export var ampl = 60
-@export var offset = 0
-
-@onready var time = offset
+var time = 0
+var ampl = 0.01
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,11 +9,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	pass
 	
 	
 func _physics_process(delta):
-	time += delta*freq 
-	$Node2D.position.x = ampl*sin(time)
-
+	time += delta
+	$".".rotation = ampl*sin(time)

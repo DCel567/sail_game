@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c616q6utun3b7"]
+[gd_scene load_steps=5 format=3 uid="uid://c616q6utun3b7"]
 
+[ext_resource type="Script" path="res://Decorations/sun.gd" id="1_ble4y"]
 [ext_resource type="Texture2D" uid="uid://dg0xuxbp7jv8q" path="res://Graphics/sun.png" id="1_d4ggm"]
 
 [sub_resource type="Gradient" id="Gradient_yfi7f"]
@@ -10,11 +11,13 @@ colors = PackedColorArray(0, 0, 0, 1, 0.310617, 0.310617, 0.310617, 1)
 gradient = SubResource("Gradient_yfi7f")
 
 [node name="sun" type="Node2D"]
+script = ExtResource("1_ble4y")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-1.5, -267.5)
+position = Vector2(-1.5, 929.5)
 scale = Vector2(0.0117188, 395)
 texture = SubResource("GradientTexture1D_t4ljq")
 
 [node name="sun" type="Sprite2D" parent="."]
+position = Vector2(0, 1197)
 texture = ExtResource("1_d4ggm")

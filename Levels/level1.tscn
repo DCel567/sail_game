@@ -10,10 +10,20 @@
 position = Vector2(960, 540)
 texture = ExtResource("1_elwte")
 
-[node name="waves" parent="." instance=ExtResource("2_m6bwc")]
-position = Vector2(950, 917)
-freq = 5
-ampl = 60
+[node name="sea" type="Node" parent="."]
+
+[node name="waves3" parent="sea" instance=ExtResource("2_m6bwc")]
+modulate = Color(0.631373, 0.631373, 0.631373, 1)
+position = Vector2(978, 897)
+offset = 200
+
+[node name="waves2" parent="sea" instance=ExtResource("2_m6bwc")]
+modulate = Color(0.815686, 0.815686, 0.815686, 1)
+position = Vector2(987, 922)
+offset = 100
+
+[node name="waves" parent="sea" instance=ExtResource("2_m6bwc")]
+position = Vector2(950, 941)
 
 [node name="sun" parent="." instance=ExtResource("3_2ykkd")]
-position = Vector2(1727, 205)
+position = Vector2(1749, -1067)
