@@ -1,153 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2mkpcnk10axq"]
+[gd_scene load_steps=4 format=3 uid="uid://d2mkpcnk10axq"]
 
 [ext_resource type="Script" path="res://Levels/MainMenu.gd" id="1_lonfn"]
 [ext_resource type="Texture2D" uid="uid://bx04ragpre0y" path="res://Graphics/739916-landscape-painting-wallpaper.jpg" id="1_qix7t"]
+[ext_resource type="PackedScene" uid="uid://delg8dfw5qf2u" path="res://UI/parallax_button.tscn" id="3_panjn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pvs6"]
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_eg58d"]
-font_size = 53
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e61m7"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.94902, 0.772549, 0.239216, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[node name="MainMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_lonfn")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -304.0
-offset_right = 636.0
-offset_bottom = 216.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(1230, 458)
 texture = ExtResource("1_qix7t")
 
-[node name="ButtonControl" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -278.0
-offset_top = -44.0
-offset_right = 278.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ButtonControl" parent="." instance=ExtResource("3_panjn")]
+offset_left = -277.0
+offset_top = -90.0
+offset_right = 279.0
+offset_bottom = -2.0
+label_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
+label_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
+border_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
+border_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
+label = "Start"
 
-[node name="StartButton" type="Button" parent="ButtonControl"]
-clip_children = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1pvs6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1pvs6")
-
-[node name="Background" type="ColorRect" parent="ButtonControl/StartButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.25098, 0.0784314, 0.0392157, 1)
-
-[node name="Colors" type="Control" parent="ButtonControl/StartButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="red" type="ColorRect" parent="ButtonControl/StartButton/Colors"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 88.0
-offset_bottom = 88.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.74902, 0.286275, 0.121569, 1)
-
-[node name="orange" type="ColorRect" parent="ButtonControl/StartButton/Colors"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 88.0
-offset_bottom = 88.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.94902, 0.505882, 0.113725, 1)
-
-[node name="yellow" type="ColorRect" parent="ButtonControl/StartButton/Colors"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 88.0
-offset_bottom = 88.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.94902, 0.772549, 0.239216, 1)
-
-[node name="Label" type="Label" parent="ButtonControl"]
-self_modulate = Color(0.94902, 0.772549, 0.239216, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Start"
-label_settings = SubResource("LabelSettings_eg58d")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="ButtonControl"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_e61m7")
-
-[connection signal="mouse_entered" from="ButtonControl/StartButton" to="." method="_on_start_button_mouse_entered"]
-[connection signal="mouse_exited" from="ButtonControl/StartButton" to="." method="_on_start_button_mouse_exited"]
+[node name="ButtonControl2" parent="." instance=ExtResource("3_panjn")]
+offset_left = -277.0
+offset_top = 24.0
+offset_right = 279.0
+offset_bottom = 112.0
+label = "Exit"
