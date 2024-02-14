@@ -11,7 +11,7 @@ script = ExtResource("1_lonfn")
 position = Vector2(1230, 458)
 texture = ExtResource("1_qix7t")
 
-[node name="ButtonControl" parent="." instance=ExtResource("3_panjn")]
+[node name="Start_button" parent="." instance=ExtResource("3_panjn")]
 offset_left = -277.0
 offset_top = -90.0
 offset_right = 279.0
@@ -20,7 +20,7 @@ label_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
 label_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
 label = "Start"
 
-[node name="ButtonControl2" parent="." instance=ExtResource("3_panjn")]
+[node name="Exit_button" parent="." instance=ExtResource("3_panjn")]
 offset_left = -277.0
 offset_top = 24.0
 offset_right = 279.0
@@ -28,3 +28,6 @@ offset_bottom = 112.0
 label_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
 label_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
 label = "Exit"
+
+[connection signal="up" from="Start_button" to="." method="_on_start_button_up"]
+[connection signal="up" from="Exit_button" to="." method="_on_exit_button_up"]
