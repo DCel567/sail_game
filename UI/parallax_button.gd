@@ -6,16 +6,14 @@ signal prsd
 
 @export var label_color_normal: Color
 @export var label_color_hover: Color
-@export var border_color_normal: Color
-@export var border_color_hover: Color
 
 @export var label: String
 
 var tween: Tween
 
 @onready var colors = $StartButton/Colors
-@onready var _label = $Label
-@onready var panel = $Panel
+@onready var _label = $StartButton/Label
+@onready var _panel = $Panel
 
 func _ready():
 	_label.text = label
@@ -31,7 +29,7 @@ func start_hover_on() -> void:
 		idx += 1
 		
 	tween.parallel().tween_property(_label, "self_modulate", label_color_hover, 0.4)
-	tween.parallel().tween_property(panel.get("theme_override_styles/panel"), "border_color", border_color_hover, 0.4)
+
 	
 func start_hover_off() -> void:
 	if tween and tween.is_running():
@@ -43,7 +41,6 @@ func start_hover_off() -> void:
 		tween.parallel().tween_property(c, "position:y", c.size.y, 0.8 - i * randf_range(0.08, 0.15))
 		
 	tween.parallel().tween_property(_label, "self_modulate", label_color_normal, 0.85)
-	tween.parallel().tween_property(panel.get("theme_override_styles/panel"), "border_color", border_color_normal, 0.85)
 
 
 func _on_start_button_mouse_entered():

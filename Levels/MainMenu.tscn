@@ -18,8 +18,6 @@ offset_right = 279.0
 offset_bottom = -2.0
 label_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
 label_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
-border_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
-border_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
 label = "Start"
 
 [node name="ButtonControl2" parent="." instance=ExtResource("3_panjn")]
@@ -27,4 +25,6 @@ offset_left = -277.0
 offset_top = 24.0
 offset_right = 279.0
 offset_bottom = 112.0
+label_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
+label_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
 label = "Exit"

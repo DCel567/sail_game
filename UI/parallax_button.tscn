@@ -17,7 +17,7 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.94902, 0.772549, 0.239216, 1)
+border_color = Color(0.94902, 0.505882, 0.113725, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -104,7 +104,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.94902, 0.772549, 0.239216, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="StartButton"]
 self_modulate = Color(0.94902, 0.772549, 0.239216, 1)
 layout_mode = 1
 anchors_preset = 15
