@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ym6d270qhjo0"]
+[gd_scene load_steps=3 format=3 uid="uid://5cnseier644o"]
 
-[ext_resource type="Script" path="res://Levels/game.gd" id="1_vwidg"]
 [ext_resource type="PackedScene" uid="uid://d2mkpcnk10axq" path="res://Levels/MainMenu.tscn" id="2_vwurj"]
 
+[sub_resource type="GDScript" id="GDScript_q6ngc"]
+script/source = "extends Node2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if get_tree().paused == true:
+		get_tree().paused = false
+
+"
+
 [node name="game" type="CanvasLayer"]
-script = ExtResource("1_vwidg")
+script = SubResource("GDScript_q6ngc")
 
 [node name="MainMenu" parent="." instance=ExtResource("2_vwurj")]

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var freq = 3
+@export var freq = 2
 @export var ampl = 60
 @export var offset = 0
 

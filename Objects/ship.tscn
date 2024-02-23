@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuhnwgaelopr8"]
+
+[ext_resource type="Script" path="res://Objects/ship.gd" id="1_6uhun"]
+[ext_resource type="Texture2D" uid="uid://ctjc7xffoeapd" path="res://Graphics/ship.png" id="1_h8mb4"]
+
+[sub_resource type="Gradient" id="Gradient_4p0px"]
+offsets = PackedFloat32Array(0.664699, 0.783943)
+colors = PackedColorArray(0.780392, 0.6, 0.290196, 1, 0.921569, 0.709804, 0.345098, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gcqr2"]
+gradient = SubResource("Gradient_4p0px")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s424t"]
+size = Vector2(368, 102)
+
+[node name="ship" type="Area2D"]
+collision_mask = 8
+script = ExtResource("1_6uhun")
+
+[node name="stick1" type="Sprite2D" parent="."]
+position = Vector2(5, -276)
+scale = Vector2(0.117187, 370.75)
+texture = SubResource("GradientTexture1D_gcqr2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -553)
+scale = Vector2(1.36111, 1.4)
+texture = ExtResource("1_h8mb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -489)
+shape = SubResource("RectangleShape2D_s424t")
