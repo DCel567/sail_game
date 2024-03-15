@@ -16,12 +16,10 @@ texture = ExtResource("1_elwte")
 [node name="sea" type="Node" parent="."]
 
 [node name="waves3" parent="sea" instance=ExtResource("2_m6bwc")]
-modulate = Color(0.631373, 0.631373, 0.631373, 1)
 position = Vector2(1006, 844)
 offset = 200
 
 [node name="waves2" parent="sea" instance=ExtResource("2_m6bwc")]
-modulate = Color(0.815686, 0.815686, 0.815686, 1)
 position = Vector2(937, 886)
 offset = 100
 

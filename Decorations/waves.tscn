@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://baj0jegkt1cyu"]
 
 [ext_resource type="Script" path="res://Decorations/waves.gd" id="1_ln1rh"]
-[ext_resource type="Texture2D" uid="uid://b87oq0pcdgeui" path="res://Graphics/waves.png" id="1_twuan"]
+[ext_resource type="Texture2D" uid="uid://cdjk6oj1dut2x" path="res://Graphics/wave2.png" id="2_3yhcm"]
 
 [sub_resource type="Gradient" id="Gradient_wflcc"]
 offsets = PackedFloat32Array(0.664699, 0.783943)
@@ -28,6 +28,5 @@ texture = SubResource("GradientTexture1D_64q8h")
 
 [node name="wave" type="Sprite2D" parent="Node2D"]
 position = Vector2(-15, -12)
-texture = ExtResource("1_twuan")
-region_enabled = true
+texture = ExtResource("2_3yhcm")
 region_rect = Rect2(0, 0, 1800, 210.375)

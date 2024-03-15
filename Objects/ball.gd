@@ -1,25 +1,21 @@
 extends Area2D
 
-@onready var time = -100
-@onready var ftime = 1
-@export var live_time = 5
+@export var live_time = 3
 
 func _ready():
 	position.y -= 550
+	
+	var scale_tween = get_tree().create_tween()
+	scale_tween.tween_property(self, "scale", Vector2(0.1, 0.1), live_time).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	
+	var pos_tween = get_tree().create_tween()
+	pos_tween.tween_property(self, "position:y", position.y - 400, live_time/2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	pos_tween.tween_property(self, "position:y", position.y, live_time/2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	
 	await get_tree().create_timer(live_time).timeout
 	queue_free()
 
 
 func _process(delta):
-	time += 100*delta
-	ftime += delta
-	
-	#var scale_delta = 1.5 - 0.1 * ftime
-	
-	position.y += 0.2 * time
-	
-	$".".scale /= 1.015
-	# y = y0 + 0.2*t
-
-
+	pass
 	
