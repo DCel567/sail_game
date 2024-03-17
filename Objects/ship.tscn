@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://Objects/ship.gd" id="1_6uhun"]
 [ext_resource type="Texture2D" uid="uid://ctjc7xffoeapd" path="res://Graphics/ship.png" id="1_h8mb4"]
 
-[sub_resource type="Gradient" id="Gradient_4p0px"]
+[sub_resource type="Gradient" id="Gradient_sb3yw"]
 offsets = PackedFloat32Array(0.664699, 0.783943)
 colors = PackedColorArray(0.780392, 0.6, 0.290196, 1, 0.921569, 0.709804, 0.345098, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_gcqr2"]
-gradient = SubResource("Gradient_4p0px")
+gradient = SubResource("Gradient_sb3yw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s424t"]
 size = Vector2(368, 102)

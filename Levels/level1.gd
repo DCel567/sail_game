@@ -4,7 +4,6 @@ var cannonball : PackedScene = preload("res://Objects/ball.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#Engine.max_fps = 60
 	pass
 
 

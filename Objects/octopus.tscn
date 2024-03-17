@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://o33omin5jthg"]
+
+[ext_resource type="Script" path="res://Objects/octopus.gd" id="1_i0i2s"]
+[ext_resource type="Texture2D" uid="uid://oy35scspy4uk" path="res://Graphics/Cthulhu.png" id="1_vjyro"]
+
+[sub_resource type="Gradient" id="Gradient_4p0px"]
+offsets = PackedFloat32Array(0.664699, 0.783943)
+colors = PackedColorArray(0.780392, 0.6, 0.290196, 1, 0.921569, 0.709804, 0.345098, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cq8sp"]
+gradient = SubResource("Gradient_4p0px")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6me8"]
+size = Vector2(193, 222)
+
+[node name="octopus" type="Area2D"]
+script = ExtResource("1_i0i2s")
+
+[node name="stick1" type="Sprite2D" parent="."]
+position = Vector2(2, 353.813)
+scale = Vector2(0.117187, 552.375)
+texture = SubResource("GradientTexture1D_cq8sp")
+
+[node name="octopus" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_vjyro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 1)
+shape = SubResource("RectangleShape2D_y6me8")

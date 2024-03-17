@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1ldltqjx76xg"]
+[gd_scene load_steps=7 format=3 uid="uid://c1ldltqjx76xg"]
 
 [ext_resource type="Texture2D" uid="uid://buq6nwcso3ntp" path="res://Graphics/sky.png" id="1_elwte"]
 [ext_resource type="Script" path="res://Levels/level1.gd" id="1_imn2w"]
 [ext_resource type="PackedScene" uid="uid://baj0jegkt1cyu" path="res://Decorations/waves.tscn" id="2_m6bwc"]
 [ext_resource type="PackedScene" uid="uid://c616q6utun3b7" path="res://Decorations/sun.tscn" id="3_2ykkd"]
 [ext_resource type="PackedScene" uid="uid://cuhnwgaelopr8" path="res://Objects/ship.tscn" id="3_ykhul"]
+[ext_resource type="PackedScene" uid="uid://o33omin5jthg" path="res://Objects/octopus.tscn" id="6_ucn51"]
 
 [node name="level1" type="Node2D"]
 script = ExtResource("1_imn2w")
@@ -33,5 +34,8 @@ position = Vector2(979, 916)
 
 [node name="sun" parent="." instance=ExtResource("3_2ykkd")]
 position = Vector2(1749, -1067)
+
+[node name="octopus" parent="." instance=ExtResource("6_ucn51")]
+position = Vector2(424, 663)
 
 [connection signal="player_shoot" from="sea/ship" to="." method="_on_ship_player_shoot"]

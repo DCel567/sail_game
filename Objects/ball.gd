@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var live_time = 3
+@export var live_time = 2
 
 func _ready():
 	position.y -= 550
