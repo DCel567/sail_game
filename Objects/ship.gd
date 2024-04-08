@@ -19,7 +19,6 @@ func _process(delta):
 		await get_tree().create_timer(1/fire_rate).timeout
 		can_shoot = true
 
-	
 
 func _physics_process(delta):
 	time += delta*freq 

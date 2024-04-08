@@ -52,12 +52,10 @@ func _on_start_button_mouse_exited():
 
 
 func _on_start_button_button_down():
-	print("down")
 	emit_signal("down")
 
 
 func _on_start_button_button_up():
-	print("up")
 	emit_signal("up")
 
 

@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var live_time = 2
+var time_lived = 0
 
 func _ready():
 	position.y -= 550
@@ -17,5 +18,8 @@ func _ready():
 
 
 func _process(delta):
-	pass
+	time_lived += delta
+	
+	if time_lived > 1 and has_overlapping_areas():
+		get_overlapping_areas()[0].hit()
 	
