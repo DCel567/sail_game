@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvd2qqulwqpdu"]
+
+[ext_resource type="Texture2D" uid="uid://bx04ragpre0y" path="res://Graphics/739916-landscape-painting-wallpaper.jpg" id="1_0ijgl"]
+[ext_resource type="PackedScene" uid="uid://delg8dfw5qf2u" path="res://UI/parallax_button.tscn" id="2_iflu5"]
+
+[node name="LevelSelectMenu" type="CanvasLayer"]
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(1230, 458)
+texture = ExtResource("1_0ijgl")
+
+[node name="ButtonControl" parent="." instance=ExtResource("2_iflu5")]
+offset_left = -279.0
+offset_top = -176.0
+offset_right = -191.0
+offset_bottom = -88.0
+label_color_normal = Color(0.945313, 0.769531, 0.238281, 1)
+label_color_hover = Color(0.25, 0.078125, 0.0390625, 1)
+label = "1"
+
+[node name="ButtonControl2" parent="." instance=ExtResource("2_iflu5")]
+offset_left = -136.0
+offset_top = -173.0
+offset_right = -48.0
+offset_bottom = -85.0
+label_color_normal = Color(0.945313, 0.769531, 0.238281, 1)
+label_color_hover = Color(0.25, 0.078125, 0.0390625, 1)
+label = "2"
