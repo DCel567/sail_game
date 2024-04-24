@@ -61,3 +61,4 @@ func _on_start_button_button_up():
 
 func _on_start_button_pressed():
 	emit_signal("prsd")
+

@@ -9,10 +9,11 @@ func _ready():
 
 
 func _on_start_button_up():
-	print("start up caught")
 	get_tree().change_scene_to_file("res://Levels/level1.tscn")
 
 
+func _on_level_button_up():
+	get_tree().change_scene_to_file("res://Levels/LevelSelectMenu.tscn")
+
 func _on_exit_button_up():
-	print("exit up cought")
 	get_tree().quit()

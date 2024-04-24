@@ -44,5 +44,5 @@ label_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
 label = "Exit"
 
 [connection signal="up" from="MarginContainer/VBoxContainer/Start_button" to="." method="_on_start_button_up"]
-[connection signal="up" from="MarginContainer/VBoxContainer/Level_button" to="." method="_on_start_button_up"]
+[connection signal="up" from="MarginContainer/VBoxContainer/Level_button" to="." method="_on_level_button_up"]
 [connection signal="up" from="MarginContainer/VBoxContainer/Exit_button" to="." method="_on_exit_button_up"]

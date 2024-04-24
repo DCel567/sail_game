@@ -1,28 +1,82 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvd2qqulwqpdu"]
+[gd_scene load_steps=4 format=3 uid="uid://bvd2qqulwqpdu"]
 
 [ext_resource type="Texture2D" uid="uid://bx04ragpre0y" path="res://Graphics/739916-landscape-painting-wallpaper.jpg" id="1_0ijgl"]
+[ext_resource type="Script" path="res://Levels/LevelSelectMenu.gd" id="1_w4w86"]
 [ext_resource type="PackedScene" uid="uid://delg8dfw5qf2u" path="res://UI/parallax_button.tscn" id="2_iflu5"]
 
 [node name="LevelSelectMenu" type="CanvasLayer"]
+script = ExtResource("1_w4w86")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(1230, 458)
 texture = ExtResource("1_0ijgl")
 
-[node name="ButtonControl" parent="." instance=ExtResource("2_iflu5")]
-offset_left = -279.0
-offset_top = -176.0
-offset_right = -191.0
-offset_bottom = -88.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 820
+theme_override_constants/margin_top = 450
+theme_override_constants/margin_right = 820
+theme_override_constants/margin_bottom = 450
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="first_level" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer" instance=ExtResource("2_iflu5")]
+layout_mode = 2
 label_color_normal = Color(0.945313, 0.769531, 0.238281, 1)
 label_color_hover = Color(0.25, 0.078125, 0.0390625, 1)
 label = "1"
 
-[node name="ButtonControl2" parent="." instance=ExtResource("2_iflu5")]
-offset_left = -136.0
-offset_top = -173.0
-offset_right = -48.0
-offset_bottom = -85.0
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="second_level" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer2" instance=ExtResource("2_iflu5")]
+layout_mode = 2
 label_color_normal = Color(0.945313, 0.769531, 0.238281, 1)
 label_color_hover = Color(0.25, 0.078125, 0.0390625, 1)
 label = "2"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="third_level" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer3" instance=ExtResource("2_iflu5")]
+layout_mode = 2
+label_color_normal = Color(0.945313, 0.769531, 0.238281, 1)
+label_color_hover = Color(0.25, 0.078125, 0.0390625, 1)
+label = "3"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="back_button" parent="MarginContainer/VBoxContainer/MarginContainer3" instance=ExtResource("2_iflu5")]
+layout_mode = 2
+label_color_normal = Color(0.945313, 0.769531, 0.238281, 1)
+label_color_hover = Color(0.25, 0.078125, 0.0390625, 1)
+label = "Back"
+
+[connection signal="up" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer/first_level" to="." method="_on_first_level_up"]
+[connection signal="up" from="MarginContainer/VBoxContainer/MarginContainer3/back_button" to="." method="_on_back_button_up"]
