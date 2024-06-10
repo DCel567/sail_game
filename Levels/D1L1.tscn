@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://1yorcfji3ehm"]
+
+[ext_resource type="PackedScene" uid="uid://c1ldltqjx76xg" path="res://Levels/level1.tscn" id="1_oph1k"]
+[ext_resource type="PackedScene" uid="uid://o33omin5jthg" path="res://Objects/octopus.tscn" id="2_ujkq4"]
+[ext_resource type="Texture2D" uid="uid://buq6nwcso3ntp" path="res://Graphics/sky.png" id="2_vjg1p"]
+[ext_resource type="PackedScene" uid="uid://baj0jegkt1cyu" path="res://Decorations/waves.tscn" id="3_1s77c"]
+[ext_resource type="PackedScene" uid="uid://c616q6utun3b7" path="res://Decorations/sun.tscn" id="5_cmisx"]
+
+[node name="level1" instance=ExtResource("1_oph1k")]
+
+[node name="sky" type="Sprite2D" parent="." index="0"]
+position = Vector2(960, 540)
+texture = ExtResource("2_vjg1p")
+
+[node name="waves3" parent="sea" index="0" instance=ExtResource("3_1s77c")]
+position = Vector2(1006, 844)
+offset = 200
+
+[node name="waves2" parent="sea" index="1" instance=ExtResource("3_1s77c")]
+position = Vector2(937, 886)
+offset = 100
+
+[node name="waves" parent="sea" index="4" instance=ExtResource("3_1s77c")]
+position = Vector2(979, 916)
+
+[node name="octopus" parent="." index="2" instance=ExtResource("2_ujkq4")]
+position = Vector2(424, 663)
+
+[node name="sun" parent="." index="3" instance=ExtResource("5_cmisx")]
+position = Vector2(1749, -1067)

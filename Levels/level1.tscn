@@ -1,41 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1ldltqjx76xg"]
+[gd_scene load_steps=4 format=3 uid="uid://c1ldltqjx76xg"]
 
-[ext_resource type="Texture2D" uid="uid://buq6nwcso3ntp" path="res://Graphics/sky.png" id="1_elwte"]
 [ext_resource type="Script" path="res://Levels/level1.gd" id="1_imn2w"]
-[ext_resource type="PackedScene" uid="uid://baj0jegkt1cyu" path="res://Decorations/waves.tscn" id="2_m6bwc"]
-[ext_resource type="PackedScene" uid="uid://c616q6utun3b7" path="res://Decorations/sun.tscn" id="3_2ykkd"]
+[ext_resource type="PackedScene" uid="uid://c3dnayjm3sw82" path="res://Levels/PauseMenu.tscn" id="3_lx38s"]
 [ext_resource type="PackedScene" uid="uid://cuhnwgaelopr8" path="res://Objects/ship.tscn" id="3_ykhul"]
-[ext_resource type="PackedScene" uid="uid://o33omin5jthg" path="res://Objects/octopus.tscn" id="6_ucn51"]
 
 [node name="level1" type="Node2D"]
 script = ExtResource("1_imn2w")
 
-[node name="sky" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-texture = ExtResource("1_elwte")
-
 [node name="sea" type="Node" parent="."]
-
-[node name="waves3" parent="sea" instance=ExtResource("2_m6bwc")]
-position = Vector2(1006, 844)
-offset = 200
-
-[node name="waves2" parent="sea" instance=ExtResource("2_m6bwc")]
-position = Vector2(937, 886)
-offset = 100
 
 [node name="Projectiles" type="Node" parent="sea"]
 
 [node name="ship" parent="sea" instance=ExtResource("3_ykhul")]
 position = Vector2(954, 1305)
 
-[node name="waves" parent="sea" instance=ExtResource("2_m6bwc")]
-position = Vector2(979, 916)
-
-[node name="sun" parent="." instance=ExtResource("3_2ykkd")]
-position = Vector2(1749, -1067)
-
-[node name="octopus" parent="." instance=ExtResource("6_ucn51")]
-position = Vector2(424, 663)
+[node name="PauseMenu" parent="." instance=ExtResource("3_lx38s")]
+visible = false
 
 [connection signal="player_shoot" from="sea/ship" to="." method="_on_ship_player_shoot"]

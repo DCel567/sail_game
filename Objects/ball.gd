@@ -12,9 +12,6 @@ func _ready():
 	var pos_tween = get_tree().create_tween()
 	pos_tween.tween_property(self, "position:y", position.y - 400, live_time/2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	pos_tween.tween_property(self, "position:y", position.y, live_time/2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
-	
-	await get_tree().create_timer(live_time).timeout
-	queue_free()
 
 
 func _process(delta):
@@ -22,4 +19,7 @@ func _process(delta):
 	
 	if time_lived > 1 and has_overlapping_areas():
 		get_overlapping_areas()[0].hit()
+		
+	if time_lived > live_time:
+		queue_free()
 	

@@ -24,6 +24,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="ButtonControl" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

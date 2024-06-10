@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var l = preload("res://Levels/level1.tscn").instantiate()
+#var l = preload("res://Levels/level1.tscn").instantiate()
 #@onready var level1 = preload("res://Levels/level1.tscn").instantiate()
 
 func _ready():
@@ -9,7 +9,7 @@ func _ready():
 
 
 func _on_start_button_up():
-	get_tree().change_scene_to_file("res://Levels/level1.tscn")
+	get_tree().change_scene_to_file("res://Levels/D1L1.tscn")
 
 
 func _on_level_button_up():

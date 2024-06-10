@@ -3,6 +3,7 @@ extends Area2D
 @export var freq = 4
 @export var ampl = 1200
 @export var rot_ampl = 0.001
+@export var hp = 3
 
 @onready var time = 0
 
@@ -23,7 +24,11 @@ func _process(delta):
 
 func hit():
 	if can_be_damaged:
-		$octopus.set_self_modulate(Color8(215, 54, 71))#d73647
+		hp -= 1
+		if hp == 0:
+			await get_tree().create_timer(0.05).timeout
+			get_tree().queue_delete(self)
+		$octopus.set_self_modulate(Color8(215, 54, 71))
 		can_be_damaged = false
 		await get_tree().create_timer(0.2).timeout
 		can_be_damaged = true
@@ -31,7 +36,5 @@ func hit():
 
 func _physics_process(delta):
 	pass
-	time += delta*1 
-#
-#	move_local_x(ampl * sin(time))
+	time += delta
 	rotation += rot_ampl*sin(PI/2 + 2*time)
