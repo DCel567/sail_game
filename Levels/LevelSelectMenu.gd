@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_first_level_up():
-	get_tree().change_scene_to_file("res://Levels/level1.tscn")
+	get_tree().change_scene_to_file("res://Levels/R1L1.tscn")
 
 
 

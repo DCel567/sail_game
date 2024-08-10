@@ -1,4 +1,5 @@
 extends Node2D
+class_name Level
 
 var cannonball : PackedScene = preload("res://Objects/ball.tscn") 
 
@@ -9,7 +10,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 

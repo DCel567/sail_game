@@ -12,7 +12,7 @@ signal player_shoot
 var can_shoot = true
 
 
-func _process(delta):
+func _process(_delta):
 	if can_shoot and Input.is_action_just_pressed("shot"):
 		player_shoot.emit()
 		can_shoot = false

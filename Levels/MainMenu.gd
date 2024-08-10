@@ -9,7 +9,7 @@ func _ready():
 
 
 func _on_start_button_up():
-	get_tree().change_scene_to_file("res://Levels/D1L1.tscn")
+	get_tree().change_scene_to_file("res://Levels/R1L1.tscn")
 
 
 func _on_level_button_up():

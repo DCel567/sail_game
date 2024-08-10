@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://du0wc8ome6stb"]
+
+[ext_resource type="PackedScene" uid="uid://c1ldltqjx76xg" path="res://Levels/BaseLevel.tscn" id="1_iolax"]
+[ext_resource type="Texture2D" uid="uid://buq6nwcso3ntp" path="res://Graphics/sky.png" id="2_kpd4j"]
+[ext_resource type="PackedScene" uid="uid://baj0jegkt1cyu" path="res://Decorations/waves.tscn" id="3_wvsjj"]
+
+[node name="level1" instance=ExtResource("1_iolax")]
+
+[node name="sky" type="Sprite2D" parent="." index="0"]
+self_modulate = Color(0.403922, 0.403922, 0.403922, 1)
+position = Vector2(960, 540)
+texture = ExtResource("2_kpd4j")
+
+[node name="waves3" parent="sea" index="0" instance=ExtResource("3_wvsjj")]
+position = Vector2(1006, 844)
+offset = 200
+
+[node name="waves2" parent="sea" index="1" instance=ExtResource("3_wvsjj")]
+position = Vector2(937, 886)
+offset = 100
+
+[node name="waves" parent="sea" index="4" instance=ExtResource("3_wvsjj")]
+position = Vector2(979, 916)

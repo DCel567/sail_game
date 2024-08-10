@@ -2,6 +2,7 @@ extends Area2D
 
 @export var live_time = 2
 var time_lived = 0
+var make_shot = true
 
 func _ready():
 	position.y -= 550
@@ -17,8 +18,9 @@ func _ready():
 func _process(delta):
 	time_lived += delta
 	
-	if time_lived > 1 and has_overlapping_areas():
+	if time_lived > 1 and has_overlapping_areas() and make_shot:
 		get_overlapping_areas()[0].hit()
+		make_shot = false
 		
 	if time_lived > live_time:
 		queue_free()
