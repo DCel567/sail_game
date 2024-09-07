@@ -26,7 +26,6 @@ func hit():
 	if can_be_damaged:
 		hp -= 1
 		if hp == 0:
-			#await get_tree().create_timer(0.05).timeout
 			get_tree().queue_delete(self)
 		$octopus.set_self_modulate(Color8(215, 54, 71))
 		can_be_damaged = false

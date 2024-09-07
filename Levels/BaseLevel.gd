@@ -14,9 +14,10 @@ func _process(_delta):
 	pass
 
 
-func _on_ship_player_shoot():
+func _on_ship_player_shoot(ball_pos: Vector2):
 	var ball = cannonball.instantiate() as Area2D
 	
-	ball.position = $sea/ship.position
+	#ball.position = $sea/ship.position
+	ball.position = ball_pos
 	$sea/Projectiles.add_child(ball)
 	
