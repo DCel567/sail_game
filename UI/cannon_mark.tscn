@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://tofgnu37li24"]
+
+[ext_resource type="Texture2D" uid="uid://b847oblg6063e" path="res://Graphics/cannon_mark.png" id="1_j55i3"]
+
+[node name="CannonMark" type="Sprite2D"]
+texture = ExtResource("1_j55i3")

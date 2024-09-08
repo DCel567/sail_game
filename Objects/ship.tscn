@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuhnwgaelopr8"]
+[gd_scene load_steps=7 format=3 uid="uid://cuhnwgaelopr8"]
 
 [ext_resource type="Script" path="res://Objects/ship.gd" id="1_6uhun"]
 [ext_resource type="Texture2D" uid="uid://ctjc7xffoeapd" path="res://Graphics/ship.png" id="1_h8mb4"]
+[ext_resource type="PackedScene" uid="uid://tofgnu37li24" path="res://UI/cannon_mark.tscn" id="3_wcg80"]
 
 [sub_resource type="Gradient" id="Gradient_sb3yw"]
 offsets = PackedFloat32Array(0.664699, 0.783943)
@@ -38,3 +39,5 @@ position = Vector2(-106, -487)
 
 [node name="Cannon2" type="Marker2D" parent="Cannons"]
 position = Vector2(92, -487)
+
+[node name="CannonMark" parent="Cannons" instance=ExtResource("3_wcg80")]
