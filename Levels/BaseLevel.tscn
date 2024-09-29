@@ -17,4 +17,6 @@ position = Vector2(954, 1305)
 [node name="PauseMenu" parent="." instance=ExtResource("3_lx38s")]
 visible = false
 
+[node name="Enemies" type="Node" parent="."]
+
 [connection signal="player_shoot" from="sea/ship" to="." method="_on_ship_player_shoot"]

@@ -1,4 +1,5 @@
 extends Area2D
+class_name Octopus
 
 @export var freq = 4
 @export var ampl = 1200
