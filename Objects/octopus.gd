@@ -1,5 +1,5 @@
 extends Area2D
-class_name Octopus
+class_name EnemyOctopus
 
 @export var freq = 4
 @export var ampl = 1200
@@ -8,6 +8,7 @@ class_name Octopus
 
 @onready var time = 0
 
+signal on_death
 
 func _ready():
 	var tween = get_tree().create_tween().bind_node(self).set_loops()
@@ -25,10 +26,12 @@ func hit():
 	hp -= 1
 	if hp == 0:
 		get_tree().queue_delete(self)
+		on_death.emit()
 		
 	$octopus.set_self_modulate(Color8(215, 54, 71))
 	await get_tree().create_timer(0.2).timeout
 	$octopus.self_modulate = Color(1, 1, 1, 1)
+	
 
 func _physics_process(delta):
 	time += delta

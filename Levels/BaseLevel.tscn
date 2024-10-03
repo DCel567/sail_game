@@ -9,6 +9,8 @@ script = ExtResource("1_dqauy")
 
 [node name="sea" type="Node" parent="."]
 
+[node name="Enemies" type="Node" parent="sea"]
+
 [node name="Projectiles" type="Node" parent="sea"]
 
 [node name="ship" parent="sea" instance=ExtResource("3_ykhul")]
@@ -16,7 +18,5 @@ position = Vector2(954, 1305)
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_lx38s")]
 visible = false
-
-[node name="Enemies" type="Node" parent="."]
 
 [connection signal="player_shoot" from="sea/ship" to="." method="_on_ship_player_shoot"]
