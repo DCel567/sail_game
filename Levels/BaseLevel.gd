@@ -34,5 +34,6 @@ func _on_enemy_dead():
 		$sea/Enemies.add_child(new_enemy)
 		new_enemy.on_death.connect(_on_enemy_dead)
 	else:
+		get_tree().change_scene_to_file("res://Levels/WinScreen.tscn")
 		print("you win!")
 	
