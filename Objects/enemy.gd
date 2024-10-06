@@ -1,5 +1,5 @@
 extends Area2D
-class_name EnemyOctopus
+class_name Enemy
 
 @export var freq = 4
 @export var ampl = 1200
@@ -27,10 +27,11 @@ func hit():
 	if hp == 0:
 		get_tree().queue_delete(self)
 		on_death.emit()
-		
-	$octopus.set_self_modulate(Color8(215, 54, 71))
+	
+	self.set_modulate(Color8(215, 54, 71))
+	#self_modulate(Color8(215, 54, 71))
 	await get_tree().create_timer(0.2).timeout
-	$octopus.self_modulate = Color(1, 1, 1, 1)
+	self.set_modulate(Color(1, 1, 1, 1))
 	
 
 func _physics_process(delta):

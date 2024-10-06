@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://Decorations/sun.gd" id="1_ble4y"]
 [ext_resource type="Texture2D" uid="uid://dg0xuxbp7jv8q" path="res://Graphics/sun.png" id="1_d4ggm"]
 
-[sub_resource type="Gradient" id="Gradient_yfi7f"]
+[sub_resource type="Gradient" id="Gradient_hpj4n"]
 offsets = PackedFloat32Array(0.457143, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.310617, 0.310617, 0.310617, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_t4ljq"]
-gradient = SubResource("Gradient_yfi7f")
+gradient = SubResource("Gradient_hpj4n")
 
 [node name="sun" type="Node2D"]
 script = ExtResource("1_ble4y")

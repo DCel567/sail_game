@@ -1,6 +1,6 @@
 extends Node
 
-var enemies = [1, 1]
+var enemies = [1, 2]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

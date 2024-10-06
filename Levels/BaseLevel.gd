@@ -2,7 +2,9 @@ extends Node2D
 class_name Level
 
 var cannonball : PackedScene = preload("res://Objects/ball.tscn")
-var first_enemy : PackedScene = preload("res://Objects/octopus.tscn")
+var octopus_enemy : PackedScene = preload("res://Objects/octopus.tscn")
+var ufo_enemy : PackedScene = preload("res://Objects/ufo.tscn")
+
 var enemy_queue = []
 
 # Called when the node enters the scene tree for the first time.
@@ -29,8 +31,12 @@ func _on_ship_player_shoot(ball_pos: Vector2):
 func _on_enemy_dead():
 	if len(enemy_queue) > 0:
 		var new_enemy = null
-		if enemy_queue.pop_back() == 1:
-			new_enemy = first_enemy.instantiate()
+		
+		var enemy_id = enemy_queue.pop_back()
+		if enemy_id == 1:
+			new_enemy = octopus_enemy.instantiate()
+		if enemy_id == 2:
+			new_enemy = ufo_enemy.instantiate()
 		$sea/Enemies.add_child(new_enemy)
 		new_enemy.on_death.connect(_on_enemy_dead)
 	else:

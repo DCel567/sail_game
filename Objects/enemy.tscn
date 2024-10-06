@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://byru42el5y2p4"]
+
+[ext_resource type="Script" path="res://Objects/enemy.gd" id="1_a02pp"]
+
+[node name="Enemy" type="Area2D"]
+position = Vector2(424, 663)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_a02pp")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dr5fj82g5jso2"]
+
+[ext_resource type="PackedScene" uid="uid://byru42el5y2p4" path="res://Objects/enemy.tscn" id="1_6oob5"]
+[ext_resource type="Texture2D" uid="uid://b7ntkhdaw6cc4" path="res://Graphics/ufo.png" id="2_21u4t"]
+
+[sub_resource type="Gradient" id="Gradient_yfi7f"]
+offsets = PackedFloat32Array(0.457143, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.310617, 0.310617, 0.310617, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a3etc"]
+gradient = SubResource("Gradient_yfi7f")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjtm6"]
+radius = 37.3171
+height = 255.104
+
+[node name="Ufo" instance=ExtResource("1_6oob5")]
+position = Vector2(267, 500)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="0"]
+position = Vector2(-1, -328)
+scale = Vector2(0.02, 600)
+texture = SubResource("GradientTexture1D_a3etc")
+
+[node name="Ufo" type="Sprite2D" parent="." index="1"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_21u4t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(-6, -3)
+rotation = 1.38175
+shape = SubResource("CapsuleShape2D_kjtm6")
