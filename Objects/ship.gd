@@ -20,7 +20,12 @@ func _ready():
 func _process(_delta):
 	if can_shoot[active_cannon] and Input.is_action_just_pressed("shot"):
 		shoot()
+	if Input.is_action_just_pressed("swap_cannon"):
+		swap_cannon()
 
+func swap_cannon():
+	active_cannon = (active_cannon+1) % 2
+	$Cannons/CannonMark.position = $Cannons.get_child(active_cannon).position
 
 func _physics_process(delta):
 	time += delta*freq
@@ -42,8 +47,5 @@ func shoot():
 	player_shoot.emit(marker_pos)
 	
 	cannon_await(active_cannon)
-	
-	active_cannon = (active_cannon + 1) % 2
-	$Cannons/CannonMark.position = $Cannons.get_child(active_cannon).position
-	
+	swap_cannon()
 

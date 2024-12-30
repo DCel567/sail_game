@@ -16,11 +16,11 @@ func _ready():
 
 func _process(delta):
 	time_lived += delta
-	
+
 	if time_lived > 1 and has_overlapping_areas():
 		get_overlapping_areas()[0].hit()
 		queue_free()
-		
+
 	if time_lived > live_time:
 		queue_free()
-	
+
