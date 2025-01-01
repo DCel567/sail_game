@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://brpyjn66ispoo"]
+[gd_scene load_steps=5 format=3 uid="uid://brpyjn66ispoo"]
 
 [ext_resource type="Texture2D" uid="uid://diaj5vgj3uaut" path="res://Graphics/ball.png" id="1_bhmp6"]
 [ext_resource type="Script" path="res://Objects/ball.gd" id="1_wuakb"]
+[ext_resource type="PackedScene" uid="uid://cssvo6j6fiwat" path="res://Music/cannon_sound.tscn" id="3_wankd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o64hh"]
 radius = 49.163
@@ -16,3 +17,5 @@ texture = ExtResource("1_bhmp6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o64hh")
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("3_wankd")]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cssvo6j6fiwat"]
+
+[ext_resource type="AudioStream" uid="uid://cdsmtq25bwle1" path="res://Music/cannon_shot.mp3" id="1_jpeyo"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_jpeyo")
+autoplay = true
