@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://tofgnu37li24"]
+[gd_scene load_steps=5 format=3 uid="uid://tofgnu37li24"]
 
 [ext_resource type="Texture2D" uid="uid://b847oblg6063e" path="res://Graphics/cannon_mark.png" id="1_j55i3"]
+[ext_resource type="Shader" path="res://UI/cannon_mark.gdshader" id="1_yfa4u"]
 [ext_resource type="Script" path="res://UI/cannon_mark.gd" id="2_evelp"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14w1h"]
+shader = ExtResource("1_yfa4u")
+
 [node name="CannonMark" type="Sprite2D"]
+material = SubResource("ShaderMaterial_14w1h")
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_j55i3")
 script = ExtResource("2_evelp")

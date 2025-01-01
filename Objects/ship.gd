@@ -6,6 +6,8 @@ signal player_shoot(cannon_pos: Vector2)
 @export var ampl = 0.4
 @export var rot_ampl = 0.001
 
+@export var cannon_autoswap = true
+
 @onready var time = 0
 
 var installed_cannons = []
@@ -24,6 +26,12 @@ func _ready():
 	
 
 func _process(_delta):
+	#TODO: rewrite it using signals
+	if installed_cannons[active_cannon].can_shoot:
+		$Cannons/CannonMark.make_blue()
+	else:
+		$Cannons/CannonMark.make_gray()
+	
 	if installed_cannons[active_cannon].can_shoot and Input.is_action_just_pressed("shot"):
 		shoot()
 	if Input.is_action_just_pressed("swap_cannon"):
@@ -54,5 +62,6 @@ func shoot():
 	player_shoot.emit(marker_pos)
 	
 	cannon_await(active_cannon)
-	swap_cannon()
+	if cannon_autoswap:
+		swap_cannon()
 

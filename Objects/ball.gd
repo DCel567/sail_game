@@ -9,9 +9,9 @@ func _ready():
 	var scale_tween = get_tree().create_tween()
 	scale_tween.tween_property(self, "scale", Vector2(0.1, 0.1), live_time).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	
-	var pos_tween = get_tree().create_tween()
-	pos_tween.tween_property(self, "position:y", position.y - 400, live_time/2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	pos_tween.tween_property(self, "position:y", position.y, live_time/2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	var pos_y_tween = get_tree().create_tween()
+	pos_y_tween.tween_property(self, "position:y", position.y - 400, live_time/2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	pos_y_tween.tween_property(self, "position:y", position.y, live_time/2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 
 
 func _process(delta):
