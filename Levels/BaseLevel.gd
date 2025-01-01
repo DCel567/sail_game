@@ -16,14 +16,10 @@ func _ready():
 	_on_enemy_dead()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-
-
 func _on_ship_player_shoot(ball_pos: Vector2):
-	var ball = cannonball.instantiate() as Area2D
+	var ball = cannonball.instantiate() as CannonBall
+	ball.pos_x_to = ($sea/ship.position.x - ball_pos.x)*4/5 + ball_pos.x
+	
 	
 	ball.position = ball_pos
 	$sea/Projectiles.add_child(ball)
