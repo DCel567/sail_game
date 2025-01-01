@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dajjfyvkhq1pu"]
+
+[ext_resource type="AudioStream" uid="uid://20v38ar181l8" path="res://Music/waves.mp3" id="1_7qas4"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_7qas4")
+autoplay = true
