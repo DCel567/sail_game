@@ -31,3 +31,9 @@ func _on_menu_button_up():
 
 func _on_continue_button_up():
 	pauseMenu()
+
+
+func _on_fullscreen_button_up():
+	var mode := DisplayServer.window_get_mode()
+	var is_window: bool = mode != DisplayServer.WINDOW_MODE_FULLSCREEN
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if is_window else DisplayServer.WINDOW_MODE_WINDOWED)

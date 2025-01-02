@@ -18,10 +18,10 @@ texture = ExtResource("1_ogrpp")
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-theme_override_constants/margin_left = 500
-theme_override_constants/margin_top = 400
-theme_override_constants/margin_right = 500
-theme_override_constants/margin_bottom = 400
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 350
+theme_override_constants/margin_right = 1200
+theme_override_constants/margin_bottom = 350
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -40,6 +40,13 @@ label_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
 label_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
 label = "Main Menu"
 
+[node name="Fullscreen_button" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_51fk0")]
+layout_mode = 2
+size_flags_vertical = 3
+label_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
+label_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
+label = "Fullscreen"
+
 [node name="Exit_button" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_51fk0")]
 layout_mode = 2
 size_flags_vertical = 3
@@ -49,4 +56,5 @@ label = "Exit"
 
 [connection signal="up" from="MarginContainer/VBoxContainer/Continue_button" to="." method="_on_continue_button_up"]
 [connection signal="up" from="MarginContainer/VBoxContainer/Menu_button" to="." method="_on_menu_button_up"]
+[connection signal="up" from="MarginContainer/VBoxContainer/Fullscreen_button" to="." method="_on_fullscreen_button_up"]
 [connection signal="up" from="MarginContainer/VBoxContainer/Exit_button" to="." method="_on_exit_button_up"]

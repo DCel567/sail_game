@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnx63ughygo8n"]
+
+[ext_resource type="Texture2D" uid="uid://bufq3nt3ab32m" path="res://Graphics/sky_2.png" id="1_acf6s"]
+[ext_resource type="Script" path="res://Decorations/sky.gd" id="2_wml3p"]
+
+[node name="Sky" type="Sprite2D"]
+texture = ExtResource("1_acf6s")
+script = ExtResource("2_wml3p")
