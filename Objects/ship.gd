@@ -6,23 +6,32 @@ signal player_shoot(cannon_pos: Vector2)
 @export var ampl = 0.4
 @export var rot_ampl = 0.001
 
-@export var cannon_autoswap = true
+@export var cannon_autoswap = false
 
 @onready var time = 0
 
 var installed_cannons = []
-
+var alt_cannons = []
 var active_cannon = 0  # 0 or 1 to shoot left or right cannon
+var cannon_types_amount = 2
 
 
 func _ready():
-	var cannon_one = Cannon.new($Cannons/Cannon1.global_position)
+	var cannon_one_pos = $Cannons/Cannon1.global_position
+	var cannon_one = Cannon.new(cannon_one_pos, 1)
 	installed_cannons.append(cannon_one)
 	
-	var cannon_two = Cannon.new($Cannons/Cannon2.global_position)
+	var cannon_two_pos = $Cannons/Cannon2.global_position
+	var cannon_two = Cannon.new(cannon_two_pos, 2)
 	installed_cannons.append(cannon_two)
 	
 	$Cannons/CannonMark.position = $Cannons.get_child(active_cannon).position
+	
+	var alt_cannon_one = Cannon.new(cannon_one_pos, 3)
+	alt_cannons.append(alt_cannon_one)
+	
+	var alt_cannon_two = Cannon.new(cannon_two_pos, 4)
+	alt_cannons.append(alt_cannon_two)
 	
 
 func _process(_delta):
@@ -36,10 +45,22 @@ func _process(_delta):
 		shoot()
 	if Input.is_action_just_pressed("swap_cannon"):
 		swap_cannon()
+	if Input.is_action_just_pressed("change_cannon_type"):
+		change_cannon_type()
 
 func swap_cannon():
 	active_cannon = (active_cannon+1) % 2
 	$Cannons/CannonMark.position = $Cannons.get_child(active_cannon).position
+	
+func change_cannon_type():
+	
+	var tmp = installed_cannons[active_cannon]
+	installed_cannons[active_cannon] = alt_cannons[active_cannon]
+	alt_cannons[active_cannon] = tmp
+	
+	print('cannon changed. i guess...')
+	print(installed_cannons[active_cannon].cannon_type)
+	
 
 
 func _physics_process(delta):
@@ -48,10 +69,10 @@ func _physics_process(delta):
 	$".".rotation += rot_ampl*sin(PI/2 + 2*time)
 
 
-func cannon_await(cannon_num):
-	installed_cannons[cannon_num].can_shoot = false
-	await get_tree().create_timer(1/installed_cannons[cannon_num].fire_rate).timeout
-	installed_cannons[cannon_num].can_shoot = true
+#func cannon_await(cannon_num):
+#	installed_cannons[cannon_num].can_shoot = false
+#	await get_tree().create_timer(1/installed_cannons[cannon_num].fire_rate).timeout
+#	installed_cannons[cannon_num].can_shoot = true
 
 
 func shoot():
@@ -61,7 +82,7 @@ func shoot():
 	marker_pos.y += ball_y_delta
 	player_shoot.emit(marker_pos)
 	
-	cannon_await(active_cannon)
+	installed_cannons[active_cannon].reload()
 	if cannon_autoswap:
 		swap_cannon()
 
