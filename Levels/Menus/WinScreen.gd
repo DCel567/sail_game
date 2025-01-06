@@ -1,6 +1,5 @@
-extends Node
+extends CanvasLayer
 
-var enemies = [1, 2]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,3 +9,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_exit_button_up():
+	get_tree().quit()
+
+
+func _on_menu_button_up():
+	get_tree().change_scene_to_file("res://Levels/Menus/MainMenu.tscn")

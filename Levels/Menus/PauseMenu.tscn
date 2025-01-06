@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3dnayjm3sw82"]
 
-[ext_resource type="Script" path="res://Levels/PauseMenu.gd" id="1_ahrh6"]
-[ext_resource type="Texture2D" uid="uid://bx04ragpre0y" path="res://Graphics/739916-landscape-painting-wallpaper.jpg" id="1_ogrpp"]
-[ext_resource type="PackedScene" uid="uid://delg8dfw5qf2u" path="res://UI/parallax_button.tscn" id="2_51fk0"]
+[ext_resource type="Script" path="res://Levels/Menus/PauseMenu.gd" id="1_dpqjp"]
+[ext_resource type="Texture2D" uid="uid://bx04ragpre0y" path="res://Graphics/739916-landscape-painting-wallpaper.jpg" id="2_qv61p"]
+[ext_resource type="PackedScene" uid="uid://delg8dfw5qf2u" path="res://UI/parallax_button.tscn" id="3_3ptbn"]
 
 [node name="PauseMenu" type="CanvasLayer"]
-script = ExtResource("1_ahrh6")
+script = ExtResource("1_dpqjp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ogrpp")
+texture = ExtResource("2_qv61p")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 1920.0
@@ -26,28 +26,28 @@ theme_override_constants/margin_bottom = 350
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Continue_button" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_51fk0")]
+[node name="Continue_button" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_3ptbn")]
 layout_mode = 2
 size_flags_vertical = 3
 label_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
 label_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
 label = "Continue"
 
-[node name="Menu_button" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_51fk0")]
+[node name="Menu_button" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_3ptbn")]
 layout_mode = 2
 size_flags_vertical = 3
 label_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
 label_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
 label = "Main Menu"
 
-[node name="Fullscreen_button" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_51fk0")]
+[node name="Fullscreen_button" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_3ptbn")]
 layout_mode = 2
 size_flags_vertical = 3
 label_color_normal = Color(0.94902, 0.772549, 0.239216, 1)
 label_color_hover = Color(0.25098, 0.0784314, 0.0392157, 1)
 label = "Fullscreen"
 
-[node name="Exit_button" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_51fk0")]
+[node name="Exit_button" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_3ptbn")]
 layout_mode = 2
 size_flags_vertical = 3
 label_color_normal = Color(0.94902, 0.772549, 0.239216, 1)

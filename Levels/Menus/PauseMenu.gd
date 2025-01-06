@@ -26,7 +26,7 @@ func _on_exit_button_up():
 
 
 func _on_menu_button_up():
-	get_tree().change_scene_to_file("res://Levels/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Levels/Menus/MainMenu.tscn")
 
 
 func _on_continue_button_up():

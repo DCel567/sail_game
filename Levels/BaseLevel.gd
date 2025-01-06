@@ -20,9 +20,9 @@ func _on_ship_player_shoot(ball_pos: Vector2):
 	var ball = cannonball.instantiate() as CannonBall
 	ball.pos_x_to = ($sea/ship.position.x - ball_pos.x)*4/5 + ball_pos.x
 	
-	
 	ball.position = ball_pos
 	$sea/Projectiles.add_child(ball)
+	
 	
 func _on_enemy_dead():
 	if len(enemy_queue) > 0:
@@ -36,6 +36,6 @@ func _on_enemy_dead():
 		$sea/Enemies.add_child(new_enemy)
 		new_enemy.on_death.connect(_on_enemy_dead)
 	else:
-		get_tree().change_scene_to_file("res://Levels/WinScreen.tscn")
+		get_tree().change_scene_to_file("res://Levels/Menus/WinScreen.tscn")
 		print("you win!")
 	

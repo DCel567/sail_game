@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c1ldltqjx76xg" path="res://Levels/BaseLevel.tscn" id="1_6bine"]
 [ext_resource type="PackedScene" uid="uid://bnx63ughygo8n" path="res://Decorations/sky.tscn" id="2_3jkj4"]
-[ext_resource type="Script" path="res://Levels/Enemies.gd" id="3_dk8b3"]
+[ext_resource type="Script" path="res://Levels/Region1/Enemies.gd" id="3_gwbmk"]
 [ext_resource type="PackedScene" uid="uid://baj0jegkt1cyu" path="res://Decorations/waves.tscn" id="3_py28l"]
 [ext_resource type="PackedScene" uid="uid://c616q6utun3b7" path="res://Decorations/sun.tscn" id="5_gsxxw"]
 
@@ -12,7 +12,7 @@
 position = Vector2(960, 1080)
 
 [node name="Enemies" parent="sea" index="0"]
-script = ExtResource("3_dk8b3")
+script = ExtResource("3_gwbmk")
 
 [node name="waves3" parent="sea" index="1" instance=ExtResource("3_py28l")]
 position = Vector2(1006, 844)

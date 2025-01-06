@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvd2qqulwqpdu"]
 
 [ext_resource type="Texture2D" uid="uid://bx04ragpre0y" path="res://Graphics/739916-landscape-painting-wallpaper.jpg" id="1_0ijgl"]
-[ext_resource type="Script" path="res://Levels/LevelSelectMenu.gd" id="1_w4w86"]
+[ext_resource type="Script" path="res://Levels/Menus/LevelSelectMenu.gd" id="1_w4w86"]
 [ext_resource type="PackedScene" uid="uid://delg8dfw5qf2u" path="res://UI/parallax_button.tscn" id="2_iflu5"]
 
 [node name="LevelSelectMenu" type="CanvasLayer"]
@@ -79,4 +79,5 @@ label_color_hover = Color(0.25, 0.078125, 0.0390625, 1)
 label = "Back"
 
 [connection signal="up" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer/first_level" to="." method="_on_first_level_up"]
+[connection signal="up" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer2/second_level" to="." method="_on_second_level_up"]
 [connection signal="up" from="MarginContainer/VBoxContainer/MarginContainer3/back_button" to="." method="_on_back_button_up"]
