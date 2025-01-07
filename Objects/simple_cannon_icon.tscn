@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3scvr7jy3p58"]
+
+[ext_resource type="Texture2D" uid="uid://dcavskln8jf1j" path="res://Graphics/simple_cannon.png" id="1_mcaa4"]
+[ext_resource type="Script" path="res://Objects/simple_cannon_icon.gd" id="2_bbf13"]
+
+[node name="SimpleCannonIcon" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_mcaa4")
+script = ExtResource("2_bbf13")

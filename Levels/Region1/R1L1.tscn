@@ -25,5 +25,5 @@ offset = 100
 [node name="waves" parent="sea" index="5" instance=ExtResource("3_py28l")]
 position = Vector2(979, 916)
 
-[node name="sun" parent="." index="2" instance=ExtResource("5_gsxxw")]
+[node name="sun" parent="sea" index="6" instance=ExtResource("5_gsxxw")]
 position = Vector2(1749, -1067)

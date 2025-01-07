@@ -1,22 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1ldltqjx76xg"]
+[gd_scene load_steps=5 format=3 uid="uid://c1ldltqjx76xg"]
 
 [ext_resource type="Script" path="res://Levels/BaseLevel.gd" id="1_dqauy"]
 [ext_resource type="PackedScene" uid="uid://c3dnayjm3sw82" path="res://Levels/Menus/PauseMenu.tscn" id="3_lx38s"]
 [ext_resource type="PackedScene" uid="uid://cuhnwgaelopr8" path="res://Objects/ship.tscn" id="3_ykhul"]
+[ext_resource type="PackedScene" uid="uid://b3scvr7jy3p58" path="res://Objects/simple_cannon_icon.tscn" id="4_4uexn"]
 
 [node name="level1" type="Node2D"]
 script = ExtResource("1_dqauy")
 
-[node name="sea" type="Node" parent="."]
+[node name="sea" type="Node2D" parent="."]
 
-[node name="Enemies" type="Node" parent="sea"]
+[node name="Enemies" type="Node2D" parent="sea"]
 
-[node name="Projectiles" type="Node" parent="sea"]
+[node name="Projectiles" type="Node2D" parent="sea"]
 
 [node name="ship" parent="sea" instance=ExtResource("3_ykhul")]
 position = Vector2(954, 1305)
 
+[node name="AltCannonIcon1" parent="." instance=ExtResource("4_4uexn")]
+self_modulate = Color(0.752941, 0.752941, 0.752941, 1)
+position = Vector2(-26, 690)
+
+[node name="CannonIcon1" parent="." instance=ExtResource("4_4uexn")]
+position = Vector2(-5, 725)
+
+[node name="AltCannonIcon2" parent="." instance=ExtResource("4_4uexn")]
+self_modulate = Color(0.752941, 0.752941, 0.752941, 1)
+position = Vector2(-26, 890)
+
+[node name="CannonIcon2" parent="." instance=ExtResource("4_4uexn")]
+position = Vector2(-5, 925)
+
 [node name="PauseMenu" parent="." instance=ExtResource("3_lx38s")]
 visible = false
 
+[connection signal="cannon_switch" from="sea/ship" to="." method="_on_ship_cannon_switch"]
 [connection signal="player_shoot" from="sea/ship" to="." method="_on_ship_player_shoot"]

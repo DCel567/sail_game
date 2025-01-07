@@ -14,6 +14,9 @@ func _ready():
 	
 	enemy_queue = $sea/Enemies.enemies
 	_on_enemy_dead()
+	
+	$CannonIcon1.activate()
+	$CannonIcon2.activate()
 
 
 func _on_ship_player_shoot(ball_pos: Vector2):
@@ -22,8 +25,8 @@ func _on_ship_player_shoot(ball_pos: Vector2):
 	
 	ball.position = ball_pos
 	$sea/Projectiles.add_child(ball)
-	
-	
+
+
 func _on_enemy_dead():
 	if len(enemy_queue) > 0:
 		var new_enemy = null
@@ -38,4 +41,21 @@ func _on_enemy_dead():
 	else:
 		get_tree().change_scene_to_file("res://Levels/Menus/WinScreen.tscn")
 		print("you win!")
-	
+
+
+func _on_ship_cannon_switch(cannon_num):
+	if cannon_num == 0:
+		if $CannonIcon1.activated:
+			$CannonIcon1.deactivate()
+			$AltCannonIcon1.activate()
+		else:
+			$CannonIcon1.activate()
+			$AltCannonIcon1.deactivate()
+			
+	if cannon_num == 1:
+		if $CannonIcon2.activated:
+			$CannonIcon2.deactivate()
+			$AltCannonIcon2.activate()
+		else:
+			$CannonIcon2.activate()
+			$AltCannonIcon2.deactivate()
