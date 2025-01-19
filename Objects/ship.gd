@@ -61,9 +61,7 @@ func change_cannon_type():
 	alt_cannons[active_cannon] = tmp
 	
 	cannon_switch.emit(active_cannon)
-	
-	print('cannon changed. i guess...')
-	
+
 
 
 func _physics_process(delta):
