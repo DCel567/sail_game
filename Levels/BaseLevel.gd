@@ -1,7 +1,7 @@
 extends Node2D
 class_name Level
 
-var cannonball : PackedScene = preload("res://Objects/ball.tscn")
+var cannonball : PackedScene = preload("res://Objects/Cannons/ball.tscn")
 var octopus_enemy : PackedScene = preload("res://Objects/Enemies/octopus.tscn")
 var ufo_enemy : PackedScene = preload("res://Objects/Enemies/ufo.tscn")
 
