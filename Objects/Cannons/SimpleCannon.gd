@@ -3,7 +3,7 @@ class_name Cannon
 
 @export var fire_rate = 0.5
 @export var can_shoot = true
-var cannon_type = 1 # for simple cannon
+@export var cannon_type = 1 # for simple cannon
 var current_cannon = false
 
 func _init(pos, num):

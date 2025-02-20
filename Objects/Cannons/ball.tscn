@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://brdfov2d4kki8"]
+
+[ext_resource type="Script" path="res://Objects/Cannons/ball.gd" id="1_8oy8q"]
+[ext_resource type="Texture2D" uid="uid://diaj5vgj3uaut" path="res://Graphics/ball.png" id="2_kwuqd"]
+[ext_resource type="PackedScene" uid="uid://cssvo6j6fiwat" path="res://Music/cannon_sound.tscn" id="3_e0ws3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o64hh"]
+radius = 49.163
+
+[node name="ball" type="Area2D"]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_8oy8q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kwuqd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_o64hh")
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("3_e0ws3")]

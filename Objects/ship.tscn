@@ -17,6 +17,10 @@ size = Vector2(368, 102)
 [node name="ship" type="Area2D"]
 collision_mask = 8
 script = ExtResource("1_6uhun")
+freq = null
+ampl = null
+rot_ampl = null
+cannon_autoswap = null
 
 [node name="stick1" type="Sprite2D" parent="."]
 position = Vector2(5, -276)

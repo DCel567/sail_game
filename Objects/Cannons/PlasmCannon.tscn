@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://wo3vgkg8mbr4"]
+
+[ext_resource type="PackedScene" uid="uid://74bn1466e2b5" path="res://Objects/Cannons/SimpleCannon.tscn" id="1_wqv3s"]
+
+[node name="PlasmCannon" instance=ExtResource("1_wqv3s")]
