@@ -11,12 +11,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 	
 func activate():
-	var tween = get_tree().create_tween().bind_node(self)
-	tween.tween_property(self, "position:x", get_window().size.x/28, activate_time).set_trans(Tween.TRANS_SINE)
+	var tween = get_tree().create_tween().bind_node(self) 
+	tween.tween_property(self, "position:x", get_window().size.x/28.0, activate_time).set_trans(Tween.TRANS_SINE)
 	activated = true
 	
 func deactivate():

@@ -13,7 +13,6 @@ var tween: Tween
 
 @onready var colors = $StartButton/Colors
 @onready var _label = $StartButton/Label
-@onready var _panel = $Panel
 
 func _ready():
 	_label.text = label

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqc1mp7noon2a"]
 
-[ext_resource type="PackedScene" uid="uid://byru42el5y2p4" path="res://Objects/enemy.tscn" id="1_3er1r"]
-[ext_resource type="Texture2D" uid="uid://oy35scspy4uk" path="res://Graphics/Cthulhu.png" id="2_0vgll"]
+[ext_resource type="PackedScene" uid="uid://byru42el5y2p4" path="res://Objects/Enemies/enemy.tscn" id="1_a23hu"]
+[ext_resource type="Texture2D" uid="uid://oy35scspy4uk" path="res://Graphics/Cthulhu.png" id="2_56r0x"]
 
 [sub_resource type="Gradient" id="Gradient_4p0px"]
 offsets = PackedFloat32Array(0.664699, 0.783943)
@@ -13,7 +13,8 @@ gradient = SubResource("Gradient_4p0px")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bd6m2"]
 size = Vector2(193, 111)
 
-[node name="Octopus" instance=ExtResource("1_3er1r")]
+[node name="Octopus" instance=ExtResource("1_a23hu")]
+hp = 4
 
 [node name="stick1" type="Sprite2D" parent="." index="0"]
 position = Vector2(2, 353.813)
@@ -22,7 +23,7 @@ texture = SubResource("GradientTexture1D_m3rrw")
 
 [node name="octopus" type="Sprite2D" parent="." index="1"]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_0vgll")
+texture = ExtResource("2_56r0x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 position = Vector2(2.5, 56.5)

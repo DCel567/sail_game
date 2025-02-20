@@ -20,5 +20,5 @@ func make_blue():
 func make_gray():
 	material = gray_mat
 
-func _process(delta):
+func _process(_delta):
 	pass

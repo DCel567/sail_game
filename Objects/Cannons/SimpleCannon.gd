@@ -10,14 +10,14 @@ func _init(pos, num):
 	global_position = pos
 	cannon_type = num
 
-	
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
