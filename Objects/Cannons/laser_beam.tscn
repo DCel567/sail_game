@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckj6vsbc0yf6g"]
+
+[ext_resource type="Texture2D" uid="uid://bks7ofybix475" path="res://Graphics/laser_beam.png" id="1_bqiy4"]
+[ext_resource type="Script" path="res://Objects/Cannons/laser_beam.gd" id="1_g75fl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hvifv"]
+radius = 93.0484
+
+[node name="LaserBeam" type="Area2D"]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_g75fl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_bqiy4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hvifv")

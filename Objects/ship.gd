@@ -24,16 +24,16 @@ func _ready():
 	installed_cannons[0].current_cannon = true
 	
 	var cannon_two_pos = $Cannons/Cannon2.global_position
-	var cannon_two = Cannon.new(cannon_two_pos, 2)
+	var cannon_two = Cannon.new(cannon_two_pos, 1)
 	installed_cannons.append(cannon_two)
 	installed_cannons[1].current_cannon = true
 	
 	$Cannons/CannonMark.position = $Cannons.get_child(active_cannon).position
 	
-	var alt_cannon_one = Cannon.new(cannon_one_pos, 3)
+	var alt_cannon_one = Cannon.new(cannon_one_pos, 2)
 	alt_cannons.append(alt_cannon_one)
 	
-	var alt_cannon_two = Cannon.new(cannon_two_pos, 4)
+	var alt_cannon_two = Cannon.new(cannon_two_pos, 1)
 	alt_cannons.append(alt_cannon_two)
 	
 
@@ -43,6 +43,9 @@ func _process(_delta):
 		$Cannons/CannonMark.make_blue()
 	else:
 		$Cannons/CannonMark.make_gray()
+		
+	var oops = 10
+	
 	
 	if installed_cannons[active_cannon].can_shoot and Input.is_action_just_pressed("shot"):
 		shoot()
@@ -74,7 +77,7 @@ func shoot():
 	var marker_pos = ($Cannons.get_child(active_cannon)).global_position
 	
 	marker_pos.y += ball_y_delta
-	player_shoot.emit(marker_pos)
+	player_shoot.emit(marker_pos, installed_cannons[active_cannon].cannon_type)
 	
 	installed_cannons[active_cannon].reload()
 	if cannon_autoswap:

@@ -2,6 +2,7 @@ extends Node2D
 class_name Level
 
 var cannonball : PackedScene = preload("res://Objects/Cannons/ball.tscn")
+var laserbeam : PackedScene = preload("res://Objects/Cannons/laser_beam.tscn")
 var octopus_enemy : PackedScene = preload("res://Objects/Enemies/octopus.tscn")
 var ufo_enemy : PackedScene = preload("res://Objects/Enemies/ufo.tscn")
 
@@ -19,8 +20,12 @@ func _ready():
 	$CannonIcon2.activate()
 
 
-func _on_ship_player_shoot(ball_pos: Vector2):
-	var ball = cannonball.instantiate() as CannonBall
+func _on_ship_player_shoot(ball_pos: Vector2, ball_type: int):
+	var ball
+	if ball_type == 1:
+		ball = cannonball.instantiate() as CannonBall
+	else:
+		ball = laserbeam.instantiate() as LaserBeam
 	ball.pos_x_to = ($sea/ship.position.x - ball_pos.x)*4/5 + ball_pos.x
 	
 	ball.position = ball_pos
