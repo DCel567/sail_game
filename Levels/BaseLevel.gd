@@ -45,7 +45,6 @@ func _on_enemy_dead():
 		new_enemy.on_death.connect(_on_enemy_dead)
 	else:
 		get_tree().change_scene_to_file("res://Levels/Menus/WinScreen.tscn")
-		print("you win!")
 
 
 func _on_ship_cannon_switch(cannon_num):

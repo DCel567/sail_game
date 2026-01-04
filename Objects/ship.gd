@@ -43,9 +43,6 @@ func _process(_delta):
 		$Cannons/CannonMark.make_blue()
 	else:
 		$Cannons/CannonMark.make_gray()
-		
-	var oops = 10
-	
 	
 	if installed_cannons[active_cannon].can_shoot and Input.is_action_just_pressed("shot"):
 		shoot()
