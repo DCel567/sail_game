@@ -35,9 +35,6 @@ func _ready():
 	if movement_type == "ufo":
 		ufo_movement()
 
-func _process(_delta):
-	pass
-
 func hit():
 	hp -= 1
 	if hp == 0:
